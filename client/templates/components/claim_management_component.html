@@ -1,0 +1,37 @@
+<template name="claimManagementComponent">
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h4>Death Claim Management</h4>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Policy Holder</th>
+          <th>Insurance Company</th>
+          <th>Smart Contract Address</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each policies}}
+          {{> claimItem}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<template name="claimItem">
+  <tr>
+    <td>{{name}}</td>
+    <td>{{policy_holder}}</td>
+    <td>{{insurer}}</td>
+    <td>{{address}}</td>
+    <td>
+      <form onSubmit>
+        <button type="button" id={{address}} class="btn btn-danger"> Death Claim </button>
+      </form>
+    </td>
+  </tr>
+</template>

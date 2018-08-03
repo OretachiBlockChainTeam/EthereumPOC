@@ -1,0 +1,17 @@
+<template name="systemLayout">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{{pathFor 'dashboard'}}">Death Claim Prototype System</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="{{activeIfCurrent 'dashboard'}}"><a href="{{pathFor 'dashboard'}}">Admin Dashboard</a></li>
+        <li class="{{activeIfCurrent 'insurers'}}"><a href="{{pathFor 'insurers'}}">For Insurers</a></li>
+        <li class="{{activeIfCurrent 'hospitals'}}"><a href="{{pathFor 'hospitals'}}">For Hospitals</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container-fluid">
+    {{> yield}}
+  </main>
+</template>
